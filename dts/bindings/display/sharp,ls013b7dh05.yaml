@@ -1,0 +1,23 @@
+#
+# Copyright (c) 2018 Miras Absar
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+title: Sharp LS013B7DH05 Display
+version: 0.1
+
+description: This is a representation of the Sharp LS013B7DH05 display.
+
+inherits:
+    !include spi-device.yaml
+
+properties:
+    compatible:
+      constraint: "sharp,ls013b7dh05"
+
+    scs-gpios:
+      type: compound
+      category: required
+      generation: define, use-prop-name
+...

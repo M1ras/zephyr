@@ -1,0 +1,13 @@
+# Kconfig - LS013B7DH05 display driver configuration options
+
+#
+# Copyright (c) 2018 Miras Absar
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+menuconfig LS013B7DH05
+	bool "LS013B7DH05 display driver"
+	depends on MINIMAL_LIBC_MALLOC_ARENA_SIZE != 0 && SPI && GPIO && HAS_DTS_SPI && HAS_DTS_GPIO
+	help
+	  Enable the LS013B7DH05 display driver.
