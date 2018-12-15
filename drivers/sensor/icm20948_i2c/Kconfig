@@ -1,0 +1,34 @@
+#
+# Copyright (c) 2018 Miras Absar
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+menuconfig ICM20948_I2C
+	bool "ICM-20948 sensor I2C driver"
+	depends on I2C && HAS_DTS_I2C
+	help
+	  Enable the ICM-20948 sensor I2C driver.
+
+if ICM20948_I2C
+
+choice
+	prompt "Trigger mode"
+	default ICM20948_I2C_TRIGGER_NONE
+	help
+	  Choose the type of triggering used by the driver.
+
+config ICM20948_I2C_TRIGGER_NONE
+	bool "No trigger"
+
+config ICM20948_I2C_TRIGGER_GLOBAL_THREAD
+	bool "Trigger on global thread"
+	depends on GPIO && HAS_DTS_GPIO
+	select ICM20948_I2C_TRIGGER
+
+endchoice
+
+config ICM20948_I2C_TRIGGER
+	bool
+
+endif

@@ -1,0 +1,15 @@
+#
+# Copyright (c) 2018 Miras Absar
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+---
+sample:
+  name: LS013B7DH05 Display Sample
+tests:
+  test:
+    build_only: true
+    platform_whitelist: nrf52840_mdk
+    depends_on: spi gpio
+    tags: drivers samples display
+...

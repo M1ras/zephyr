@@ -1,0 +1,32 @@
+/*
+ * Copyright (c) 2018 Miras Absar
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+// &spi0 {
+// 	status = "ok";
+// 	sck-pin = <21>;
+// 	mosi-pin = <17>;
+// 	miso-pin = <16>;
+
+// 	ls013b7dh05@0 {
+// 		compatible = "sharp,ls013b7dh05";
+// 		reg = <17>;
+// 		spi-max-frequency = <1000000>;
+// 		label = "LS013B7DH05";
+// 		scs-gpios = <&gpio0 15 0>;
+// 	};
+// };
+
+&i2c0 {
+	status = "ok";
+	sda-pin = <25>;
+	scl-pin = <26>;
+
+	icm20948_i2c@68 {
+		compatible = "tdk,icm20948";
+		reg = <0x68>;
+		label = "ICM20948_I2C";
+	};
+};
